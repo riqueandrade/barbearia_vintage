@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--body-font);
     color: var(--text-color);
@@ -24,14 +28,40 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
+/* Otimização de performance */
+.navbar {
+    transition: transform var(--transition);
+    will-change: transform;
 }
 
+.navbar.scroll-down {
+    transform: translateY(-100%);
+}
+
+.navbar.scroll-up {
+    transform: translateY(0);
+}
+
+/* Animações de entrada */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Otimização de imagens */
 img {
     max-width: 100%;
     height: auto;
     display: block;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 /* WhatsApp Float Button */

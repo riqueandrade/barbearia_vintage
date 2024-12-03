@@ -41,7 +41,7 @@ function carregarDepoimentos() {
             <div class="col-md-4 mb-4">
                 <div class="depoimento-card text-center">
                     <div class="depoimento-img-container mb-3">
-                        <img src="${depoimento.foto}" alt="${depoimento.nome}" class="depoimento-img" loading="lazy" width="100" height="100">
+                        <img src="${depoimento.foto}" alt="${depoimento.nome}" class="depoimento-img" loading="lazy" />
                     </div>
                     <h5 class="depoimento-nome">${depoimento.nome}</h5>
                     <div class="text-warning mb-2 estrelas">${estrelas}</div>
@@ -85,10 +85,10 @@ function setupNumberAnimation() {
                 const key = element.id.replace('numero-', '');
                 const { final, duration } = numbers[key];
                 
-                let start = 0;
-                const startTime = performance.now();
+                let startTime;
                 
                 function animate(currentTime) {
+                    if (!startTime) startTime = currentTime;
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / duration, 1);
                     
@@ -104,13 +104,38 @@ function setupNumberAnimation() {
                 observer.unobserve(element);
             }
         });
-    }, { threshold: 0.5 });
+    }, { 
+        threshold: 0.2,
+        rootMargin: '50px'
+    });
 
     Object.keys(numbers).forEach(key => {
         const element = document.getElementById(`numero-${key}`);
         if (element) {
             observer.observe(element);
         }
+    });
+}
+
+// Função para revelar elementos conforme scroll
+function setupScrollReveal() {
+    const revealElements = document.querySelectorAll('.servico-card, .depoimento-card, .galeria-item');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
+    
+    revealElements.forEach(element => {
+        element.classList.add('reveal-on-scroll');
+        revealObserver.observe(element);
     });
 }
 
@@ -125,15 +150,41 @@ function setupSmoothScroll() {
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                requestAnimationFrame(() => {
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
     });
+}
+
+// Otimizar scroll do navbar
+function setupNavbarScroll() {
+    let lastScroll = 0;
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    window.addEventListener('scroll', () => {
+        requestAnimationFrame(() => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                navbar.classList.remove('scrolled', 'scroll-up');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+                navbar.classList.remove('scroll-up');
+                navbar.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+                navbar.classList.remove('scroll-down');
+                navbar.classList.add('scroll-up');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }, { passive: true });
 }
 
 // Inicialização otimizada
@@ -142,7 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
     carregarDepoimentos();
     carregarGaleria();
     setupNumberAnimation();
+    setupScrollReveal();
     setupSmoothScroll();
+    setupNavbarScroll();
 
     // WhatsApp click handler
     const whatsappLink = document.querySelector('.whatsapp-float');
