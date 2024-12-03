@@ -1,0 +1,334 @@
+/* Definir variáveis globais */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #c4a747;
+    --accent-color: #e6e6e6;
+    --text-color: #333;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: #FFF;
+    transform: translateY(-5px);
+}
+
+/* Seção de números */
+.numeros {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 80px 0;
+}
+
+.numero-container {
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.numero-container:hover {
+    transform: translateY(-10px);
+}
+
+.numero-container i {
+    color: var(--secondary-color);
+}
+
+.numero-container h3 {
+    font-size: 3rem;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+/* Melhorias nos cards de serviço */
+.servico-card {
+    border: none;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.servico-card img {
+    transition: transform 0.5s ease;
+}
+
+.servico-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Melhorias no formulário */
+.form-control {
+    height: auto;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #938282;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(196, 167, 71, 0.25);
+}
+
+/* Melhorias na responsividade */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+
+    .numero-container h3 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Adicionar ao arquivo CSS existente */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Ajustes nos cards */
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Melhorar espaçamento */
+section {
+    padding: 80px 0;
+}
+
+/* Ajustar cores dos botões */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+/* Estilos para os depoimentos */
+.depoimento-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-10px);
+}
+
+.depoimento-img-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--secondary-color);
+    padding: 3px;
+}
+
+.depoimento-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.depoimento-nome {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 15px 0 10px;
+}
+
+.estrelas {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.depoimento-texto {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Animação para os depoimentos */
+.depoimento-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustar delay na animação para cada card */
+.depoimento-card:nth-child(1) { animation-delay: 0.2s; }
+.depoimento-card:nth-child(2) { animation-delay: 0.4s; }
+.depoimento-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Estilos para a galeria */
+.galeria-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Adicionar overlay na galeria */
+.galeria-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.galeria-item:hover::after {
+    opacity: 1;
+}
+
+/* Ajustar responsividade da galeria */
+@media (max-width: 768px) {
+    .galeria-item img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .galeria-item img {
+        height: 200px;
+    }
+} 
