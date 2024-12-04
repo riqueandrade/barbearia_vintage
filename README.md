@@ -22,15 +22,15 @@
 </h4>
 
 <p align="center">
-  <a href="#-sobre">Sobre</a> •
-  <a href="#-funcionalidades">Funcionalidades</a> •
-  <a href="#-tecnologias">Tecnologias</a> •
-  <a href="#-instalação">Instalação</a> •
-  <a href="#-contribuição">Contribuição</a> •
-  <a href="#-licença">Licença</a>
+  <a href="#sobre">Sobre</a> •
+  <a href="#funcionalidades">Funcionalidades</a> •
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#instalação">Instalação</a> •
+  <a href="#contribuição">Contribuição</a> •
+  <a href="#licença">Licença</a>
 </p>
 
-## 📋 Sobre
+## Sobre
 
 A Barbearia Vintage é um projeto web que combina design moderno com elementos clássicos de barbearia. Desenvolvido com foco em:
 
@@ -40,7 +40,7 @@ A Barbearia Vintage é um projeto web que combina design moderno com elementos c
 - 🔧 **Performance**: Otimização e boas práticas
 - 📱 **Responsividade**: Adaptação para todos os dispositivos
 
-## ⭐ Funcionalidades
+## Funcionalidades
 
 <details>
 <summary>Interface & Design</summary>
@@ -65,7 +65,7 @@ A Barbearia Vintage é um projeto web que combina design moderno com elementos c
 
 </details>
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 <details>
 <summary>Frontend</summary>
@@ -86,26 +86,26 @@ A Barbearia Vintage é um projeto web que combina design moderno com elementos c
 
 </details>
 
-## 📦 Estrutura do Projeto
+## Instalação
 
 ```bash
 barbearia-vintage/
-├── 📄 index.html               # Página principal do site
-├── 📁 src/                     # Código fonte
-│   ├── 🎨 index.css           # Estilos globais
-│   └── 🔧 index.js            # Scripts e interatividade
-├── 📸 images/                  # Recursos de imagem
-│   ├── img1.jpeg              # Foto da galeria 1
-│   ├── img2.jpeg              # Foto da galeria 2
-│   ├── img3.jpeg              # Foto da galeria 3
-│   ├── img4.jpeg              # Foto da galeria 4
-│   ├── img5.jpeg              # Foto da galeria 5
-│   └── img6.jpeg              # Foto da galeria 6
-├── 📝 README.md               # Documentação do projeto
-└── 📜 LICENSE                 # Licença MIT
+├── 📄 index.html               
+├── 📁 src/                     
+│   ├── 🎨 index.css           
+│   └── 🔧 index.js           
+├── 📸 images/                  
+│   ├── img1.jpeg               
+│   ├── img2.jpeg               
+│   ├── img3.jpeg               
+│   ├── img4.jpeg               
+│   ├── img5.jpeg               
+│   └── img6.jpeg               
+├── 📝 README.md               
+└── 📜 LICENSE                 
 ```
 
-## ⚡ Início Rápido
+## Início Rápido
 
 ### Pré-requisitos
 
@@ -146,11 +146,11 @@ xdg-open index.html
 
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5547988231069)
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 🤝 Contribuição
+## Contribuição
 
 1. Faça um Fork do projeto
 2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
@@ -165,6 +165,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-Feito com 💈 por [Henrique Reynaud](https://github.com/henriquereynaud)
+Feito por [Henrique Reynaud](https://github.com/riqueandrade)
 
 </div>
