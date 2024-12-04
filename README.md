@@ -100,10 +100,10 @@ barbearia-vintage/
 │   ├── img3.jpeg               
 │   ├── img4.jpeg               
 │   ├── img5.jpeg               
-│   └── img6.jpeg               
+│   └── img6.jpeg        
+├── 📝 CONTRIBUTING.md               
 ├── 📝 README.md               
 └── 📜 LICENSE                 
-```
 
 ## Início Rápido
 
